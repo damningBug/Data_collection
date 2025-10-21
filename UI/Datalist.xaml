@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:datacollection.UI"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="287">
+             d:DesignHeight="380" d:DesignWidth="286">
     <!-- 数据列表控件 -->
     <ListView ItemsSource="{Binding DataItems}" 
               SelectedItem="{Binding SelectedItem}"
@@ -14,7 +14,7 @@
             <GridView>
                 <GridViewColumn Header="名称" DisplayMemberBinding="{Binding Name}" Width="50"/>
                 <GridViewColumn Header="值" DisplayMemberBinding="{Binding Value}" Width="90"/>
-                <GridViewColumn Header="日期时间" DisplayMemberBinding="{Binding DateTime, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}" Width="130"/>
+                <GridViewColumn Header="日期时间" DisplayMemberBinding="{Binding DateTime, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}" Width="134"/>
             </GridView>
         </ListView.View>
     </ListView>

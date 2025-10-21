@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Timers;
 
 namespace datacollection.ViewModels
 {
@@ -12,6 +13,7 @@ namespace datacollection.ViewModels
         private ObservableCollection<DataItem> _dataItems;
         private DateTime _currentDateTime;
         private DataItem _selectedItem;
+        private Timer _timer;
 
         /// <summary>
         /// 数据列表集合
@@ -57,6 +59,10 @@ namespace datacollection.ViewModels
 
             // 设置当前时间
             CurrentDateTime = DateTime.Now;
+            // 设置定时器每秒更新当前时间
+            _timer = new Timer(1000); // 每秒更新一次
+            _timer.Elapsed += (sender, e) => CurrentDateTime = DateTime.Now;
+            _timer.Start();
         }
 
         /// <summary>

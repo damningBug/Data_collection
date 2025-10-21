@@ -7,7 +7,7 @@
         xmlns:ui="clr-namespace:datacollection.UI"
         xmlns:vm="clr-namespace:datacollection.ViewModels"
         mc:Ignorable="d"
-        Title="数据采集系统" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+        Title="数据采集系统" Height="600" Width="720" WindowStartupLocation="CenterScreen">
     <!-- 设置数据上下文为MainViewModel -->
     <Window.DataContext>
         <vm:MainViewModel />
@@ -30,8 +30,8 @@
 
             <!-- 第二列、第二行：留空 -->
         <Grid Grid.Column="1" Grid.Row="1" Margin="5">
-            <Button Content="导出" Command="{Binding ExportCommand}" Margin="200,10,10,51" Padding="5,2" Width="70"/>
-            <Button Content="设置" Command="{Binding OpenSettingsCommand}" Margin="200,50,10,10" Padding="5,2" Width="70"/>
+            <Button Content="导出" Command="{Binding ExportCommand}" Padding="5,2" Width="70" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,0,0"/>
+            <Button Content="设置" Command="{Binding OpenSettingsCommand}" Padding="5,2" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,9"/>
 
         </Grid>
 
@@ -51,8 +51,8 @@
         </Grid>
 
         <!-- 第二列、第三行：显示当前日期时间 -->
-        <Border Grid.Column="1" Grid.Row="2" Margin="5" BorderBrush="LightGray" BorderThickness="1" Background="WhiteSmoke">
-            <TextBlock Text="{Binding CurrentDateTime, StringFormat='当前时间: {0:yyyy-MM-dd HH:mm:ss}'}" 
+        <Border Grid.Column="1" Grid.Row="2" Margin="5" BorderThickness="1" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding CurrentDateTime, StringFormat='当前时间: {0:yyyy年MM月dd日 HH:mm:ss}'}" 
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center"
                        FontSize="14"

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using datacollection.UI;
+using datacollection.ViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace datacollection.Views
 {
@@ -23,6 +13,14 @@ namespace datacollection.Views
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
+
+        //private void ExportCommand(object sender, ExecutedRoutedEventArgs e)
+        //{
+        //    // 创建并显示新的窗口
+        //    Settings setting = new Settings();
+        //    setting.ShowDialog(); // 非模态；若要模态则用 ShowDialog()
+        //}
     }
 }

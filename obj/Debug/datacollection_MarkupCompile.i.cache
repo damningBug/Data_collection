@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\PC软件开发\联洋\datacollection\obj\Debug\
+E:\PC软件开发\datacollection0.1\obj\Debug\
 datacollection
 none
 false
 DEBUG;TRACE
-E:\PC软件开发\联洋\datacollection\App.xaml
-21325533979
+E:\PC软件开发\datacollection0.1\App.xaml
+31475008000
 
-112095767692
+121012794651
 13-38814620
-UI\Datalist.xaml;Views\MainWindow.xaml;
+UI\Datalist.xaml;Views\MainWindow.xaml;Views\Settings.xaml;
 
-True
+False
 
