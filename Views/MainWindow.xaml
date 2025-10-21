@@ -1,0 +1,62 @@
+﻿<Window x:Class="datacollection.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datacollection" 
+        xmlns:ui="clr-namespace:datacollection.UI"
+        xmlns:vm="clr-namespace:datacollection.ViewModels"
+        mc:Ignorable="d"
+        Title="数据采集系统" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+    <!-- 设置数据上下文为MainViewModel -->
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <!-- 主网格：两列三行布局 -->
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="AUTO"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <!-- 第一列、第一行：数据列表 -->
+        <ui:Datalist Grid.Column="0" Grid.Row="0" Width="290" HorizontalAlignment="Left" />
+
+            <!-- 第二列、第二行：留空 -->
+        <Grid Grid.Column="1" Grid.Row="1" Margin="5">
+            <Button Content="导出" Command="{Binding ExportCommand}" Margin="200,10,10,51" Padding="5,2" Width="70"/>
+            <Button Content="设置" Command="{Binding OpenSettingsCommand}" Margin="200,50,10,10" Padding="5,2" Width="70"/>
+
+        </Grid>
+
+        <!-- 第一列、第三行：分为两列 -->
+        <Grid Grid.Column="0" Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Margin="2" BorderBrush="LightGray" BorderThickness="1" Background="WhiteSmoke">
+                <TextBlock Text="统计信息1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5"/>
+            </Border>
+            <Border Grid.Column="1" Margin="2" BorderBrush="LightGray" BorderThickness="1" Background="WhiteSmoke">
+                <TextBlock Text="统计信息2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5"/>
+            </Border>
+        </Grid>
+
+        <!-- 第二列、第三行：显示当前日期时间 -->
+        <Border Grid.Column="1" Grid.Row="2" Margin="5" BorderBrush="LightGray" BorderThickness="1" Background="WhiteSmoke">
+            <TextBlock Text="{Binding CurrentDateTime, StringFormat='当前时间: {0:yyyy-MM-dd HH:mm:ss}'}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontSize="14"
+                       Padding="5"/>
+        </Border>
+    </Grid>
+</Window>
